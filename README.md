@@ -25,23 +25,7 @@ Koneksi dilakukan secara bertingkat berdasarkan diagram topologi berikut:
 - **Secure Tunneling**: Menggunakan Cloudflare Tunnel (cloudflared) di Client A untuk mengekspos layanan HTTP Server lokal ke Internet.
 
 Topologi Detail:
-```
-               [ Internet (Cloud) ]
-                 ^              ^
-                 |              |
-           (Koneksi AP)   (Cloudflare Tunnel)
-                 |              |
-[ Wireless AP (172.10.18.1) ]   |
-      )))                  (((  |
-       ~                    ~   |
-[ Wireless Client A ]    [ Wireless Client B ]
-- IP Local: 172.10.18.2  - IP Local: 172.10.18.3
-- HTTP Server running    - ZeroTier: 10.16.xx.2
-- ZeroTier: 10.16.xx.1   - (xx bebas)
-- Cloudflare Tunnel      
-       |                        |
-       +--- [ ZeroTier Private ]+
-```
+![Topologi](topologi.png)
 
 Nilai:
 - Berhasil (Semua koneksi terhubung dan terkonfigurasi) : 30 Point
